@@ -22,7 +22,7 @@ func (out *Calculadora) obtenerDatos(o string, p string) {
 		newValues, _ := strconv.Atoi(values[i])
 		x = append(x, newValues)
 	}
-	err := errors.New("Así no!")
+	err := errors.New("Syntax Error *.*")
 
 	if len(x) == 1 {
 		fmt.Println(err)
@@ -121,7 +121,7 @@ func Calcular() {
 	fmt.Scanln(&eleccion)
 
 	out := Calculadora{}
-	err := errors.New("Así no!")
+	err := errors.New("Syntax Error *.*")
 
 	if eleccion > "4" || len(eleccion) > 2 {
 		fmt.Println(err)
