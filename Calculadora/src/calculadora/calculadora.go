@@ -22,43 +22,53 @@ func (out *Calculadora) obtenerDatos(o string, p string) {
 		newValues, _ := strconv.Atoi(values[i])
 		x = append(x, newValues)
 	}
-	if p == "+" {
-		for _, v := range x {
-			s += v
-		}
-		out.output = float64(s)
-	}
-	if p == "-" {
-		for _, v := range x {
+	err := errors.New("Así no!")
 
-			if s == 0 {
-				s = x[0]
+	if len(x) == 1 {
+		fmt.Println(err)
+	} else {
+		if p == "+" {
+			for _, v := range x {
+				s += v
 			}
-			s -= v
+			out.output = float64(s)
+			fmt.Println(out.output)
 		}
-		out.output = float64(s)
-	}
-	if p == "*" {
-		for _, v := range x {
+		if p == "-" {
+			for _, v := range x {
 
-			if s == 0 {
-				s = x[0]
-			} else {
-				s *= v
+				if s == 0 {
+					s = x[0]
+				}
+				s -= v
 			}
+			out.output = float64(s)
+			fmt.Println(out.output)
 		}
-		out.output = float64(s)
-	}
-	if p == "/" {
-		for _, v := range x {
+		if p == "*" {
+			for _, v := range x {
 
-			if s == 0 {
-				s = x[0]
-			} else {
-				s /= v
+				if s == 0 {
+					s = x[0]
+				} else {
+					s *= v
+				}
 			}
+			out.output = float64(s)
+			fmt.Println(out.output)
 		}
-		out.output = float64(s)
+		if p == "/" {
+			for _, v := range x {
+
+				if s == 0 {
+					s = x[0]
+				} else {
+					s /= v
+				}
+			}
+			out.output = float64(s)
+			fmt.Println(out.output)
+		}
 	}
 
 }
@@ -134,7 +144,6 @@ func Calcular() {
 		if eleccion == "4" {
 			out.dividir(operacion)
 		}
-		fmt.Println(out)
 	}
 
 }

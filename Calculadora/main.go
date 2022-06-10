@@ -1,8 +1,6 @@
 package main
 
-import (
-	"github.com/MaidedPonce/Calculadora/src/calculadora"
-)
+import "github.com/MaidedPonce/calculator-in-Golang/Calculadora/src/calculadora"
 
 func main() {
 	calculadora.Calcular()
